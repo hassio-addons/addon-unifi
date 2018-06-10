@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Community Hass.io Add-ons: UniFi Controller
+# Runs the UniFi Controller
+# ==============================================================================
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
+
+hass.log.info 'Starting the UniFi Controller'
+
+# Run UniFi
+exec /usr/bin/java -Xmx1024M -jar /usr/lib/unifi/lib/ace.jar start
