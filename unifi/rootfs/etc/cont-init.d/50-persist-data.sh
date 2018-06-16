@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
 # Community Hass.io Add-ons: UniFi Controller
-# Lorem ipsum
+# Ensures the data of the UniFi controller is store outside the container
 # ==============================================================================
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh

@@ -46,12 +46,12 @@ ARG BUILD_VERSION
 # Labels
 LABEL \
     io.hass.name="UniFi Controller" \
-    io.hass.description="Lorem ipsum" \
+    io.hass.description="Manage your UniFi network using a web browser" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.label-schema.description="Lorem ipsum" \
+    org.label-schema.description="Manage your UniFi network using a web browser" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="UniFi Controller" \
     org.label-schema.schema-version="1.0" \

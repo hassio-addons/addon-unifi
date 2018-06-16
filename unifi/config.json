@@ -2,7 +2,7 @@
   "name": "UniFi Controller",
   "version": "dev",
   "slug": "unifi",
-  "description": "Lorem ipsum.",
+  "description": "Manage your UniFi network using a web browser",
   "url": "https://community.home-assistant.io/?u=frenck",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8443]",
   "startup": "services",

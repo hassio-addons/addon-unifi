@@ -1,0 +1,76 @@
+# Community Hass.io Add-ons: UniFi Controller
+
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+
+[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
+
+The UniFi Controller allows you to manage your UniFi network
+using a web browser.
+
+## About
+
+This add-on runs Ubiquiti Networks' UniFi Controller software, which allows
+you to manage your UniFi network via the web browser. The add-on provides a
+single-click installation and run solution for Hass.io, allowing users to get
+their network up, running, and updated, easily.
+
+This add-on supports all Hass.io supported architectures, including the
+Raspberry Pi.
+
+[Click here for the full documentation][docs]
+
+![UniFi Controller][screenshot]
+
+{% if channel == "edge" %}
+## WARNING! THIS IS AN EDGE VERSION!
+
+This Hass.io Add-ons repository contains edge builds of add-ons. Edge builds
+add-ons are based upon the latest development version.
+
+- They may not work at all.
+- They might stop working at any time.
+- They could have a negative impact on your system.
+
+This repository was created for:
+
+- Anybody willing to test.
+- Anybody interested in trying out upcoming add-ons or add-on features.
+- Developers.
+
+If you are more interested in stable releases of our add-ons:
+
+<https://github.com/hassio-addons/repository>
+
+{% endif %}
+{% if channel == "beta" %}
+## WARNING! THIS IS A BETA VERSION!
+
+This Hass.io Add-ons repository contains beta releases of add-ons.
+
+- They might stop working at any time.
+- They could have a negative impact on your system.
+
+This repository was created for:
+
+- Anybody willing to test.
+- Anybody interested in trying out upcoming add-ons or add-on features.
+
+If you are more interested in stable releases of our add-ons:
+
+<https://github.com/hassio-addons/repository>
+
+{% endif %}
+[buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
+[buymeacoffee]: https://www.buymeacoffee.com/frenck
+[discord-shield]: https://img.shields.io/discord/330944238910963714.svg
+[discord]: https://discord.gg/c5DvZ4e
+[docs]: {{ repo }}/blob/{{ version }}/README.md
+[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
+[forum]: https://community.home-assistant.io/?u=frenck
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2018.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
+[release-shield]: https://img.shields.io/badge/version-{{ version }}-blue.svg
+[release]: {{ repo }}/tree/{{ version }}
+[screenshot]: https://github.com/hassio-addons/addon-unifi/raw/master/images/screenshot.jpg
