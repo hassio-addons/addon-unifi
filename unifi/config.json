@@ -4,7 +4,7 @@
   "slug": "unifi",
   "description": "Lorem ipsum.",
   "url": "https://community.home-assistant.io/?u=frenck",
-  "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8443]",
   "startup": "services",
   "arch": [
     "aarch64",
