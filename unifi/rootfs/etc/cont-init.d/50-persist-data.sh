@@ -11,3 +11,9 @@ if ! hass.directory_exists '/data/unifi/data'; then
 fi
 rm -fr /usr/lib/unifi/data
 ln -s /data/unifi/data /usr/lib/unifi/data
+
+if ! hass.directory_exists '/backup/unifi'; then
+    mkdir -p /backup/unifi
+fi
+rm -fr /usr/lib/unifi/data/backup
+ln -s /backup/unifi /usr/lib/unifi/data/backup
