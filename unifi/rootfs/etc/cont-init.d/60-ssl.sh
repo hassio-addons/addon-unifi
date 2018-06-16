@@ -9,7 +9,6 @@ source /usr/lib/hassio-addons/base.sh
 readonly KEYSTORE="/usr/lib/unifi/data/keystore"
 declare certfile
 declare keyfile
-declare certuri
 declare tempcert
 
 # Identrust cross-signed CA cert needed by the java keystore for import.
