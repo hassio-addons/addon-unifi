@@ -25,7 +25,7 @@ RUN \
         openjdk-8-jdk-headless=8u171-b11-0ubuntu0.18.04.1 \
     \
     && curl -J -L -o /tmp/unifi.deb \
-        "https://dl.ubnt.com/unifi/5.8.22-f98a1c4f48/unifi_sysvinit_all.deb" \
+        "https://dl.ubnt.com/unifi/5.8.23-d5a5bbfda4/unifi_sysvinit_all.deb" \
     \
     && dpkg --install /tmp/unifi.deb \
     \
