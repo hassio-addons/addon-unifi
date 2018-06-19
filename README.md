@@ -123,9 +123,9 @@ but has been adjusted to put the created backups in a different location.
 Backups are created in `/backup/unifi`. You can access this folder using
 the normal Hass.io methods (e.g., using Samba, Terminal, SSH).
 
-## Migrating
+## Migrating from an existing controller
 
-If you want to migrate from a existing controller to the controller provided
+If you want to migrate from an existing controller to the controller provided
 by this addon, Ubiquiti has an exellent tutorial on this:
 
 <https://help.ubnt.com/hc/en-us/articles/115002869188>
