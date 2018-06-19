@@ -75,7 +75,7 @@ Example add-on configuration:
 }
 ```
 
-**Note**: _This is just an example, don't copy and past it! Create your own!_
+**Note**: _This is just an example, don't copy and paste it! Create your own!_
 
 ### Option: `log_level`
 
@@ -122,6 +122,17 @@ but has been adjusted to put the created backups in a different location.
 
 Backups are created in `/backup/unifi`. You can access this folder using
 the normal Hass.io methods (e.g., using Samba, Terminal, SSH).
+
+## Migrating
+
+If you want to migrate from a existing controller to the controller provided
+by this addon, Ubiquiti has an exellent tutorial on this:
+
+<https://help.ubnt.com/hc/en-us/articles/115002869188>
+
+This article explains in detail how to use the UniFi Site Export Wizard
+to quickly and easily export sites from one Controller
+(including configuration and devices) to another (e.g., this add-on).
 
 ## Known issues and limitations
 
