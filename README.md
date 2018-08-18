@@ -14,6 +14,8 @@
 
 [![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
+[![Support my work on Patreon][patreon-shield]][patreon]
+
 The UniFi Controller allows you to manage your UniFi network
 using a web browser.
 
@@ -174,10 +176,11 @@ Got questions?
 
 You have several options to get them answered:
 
-- The Home Assistant [Community Forum][forum], we have a
-  [dedicated topic][forum] on that forum regarding this add-on.
-- The Home Assistant [Discord Chat Server][discord] for general Home Assistant
-  discussions and questions.
+- The [Community Hass.io Add-ons Discord chat server][discord] for add-on
+  support and feature requests.
+- The [Home Assistant Discord chat server][discord-ha] for general Home
+  Assistant discussions and questions.
+- The Home Assistant [Community Forum][forum].
 - Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
 You could also [open an issue here][issue] GitHub.
@@ -242,8 +245,9 @@ SOFTWARE.
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-unifi.svg
 [commits]: https://github.com/hassio-addons/addon-unifi/commits/master
 [contributors]: https://github.com/hassio-addons/addon-unifi/graphs/contributors
-[discord-shield]: https://img.shields.io/discord/330944238910963714.svg
-[discord]: https://discord.gg/c5DvZ4e
+[discord-ha]: https://discord.gg/c5DvZ4e
+[discord-shield]: https://img.shields.io/discord/478094546522079232.svg
+[discord]: https://discord.me/hassioaddons
 [dockerhub]: https://hub.docker.com/r/hassioaddons/unifi
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/community-hass-io-add-on-unifi-controller/56297?u=frenck
@@ -258,6 +262,8 @@ SOFTWARE.
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-unifi.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2018.svg
 [microbadger]: https://microbadger.com/images/hassioaddons/unifi
+[patreon-shield]: https://www.frenck.nl/images/patreon.png
+[patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/unifi.svg
 [reddit]: https://reddit.com/r/homeassistant
