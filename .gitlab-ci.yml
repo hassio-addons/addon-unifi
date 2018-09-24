@@ -293,7 +293,7 @@ build:armhf:
   <<: *build
   variables:
     ADDON_ARCH: armhf
-    FROM: hassioaddons/ubuntu-base-armhf:2.1.1
+    FROM: hassioaddons/ubuntu-base-armhf:2.2.0
   tags:
     - build
     - armhf
@@ -302,7 +302,7 @@ build:aarch64:
   <<: *build
   variables:
     ADDON_ARCH: aarch64
-    FROM: hassioaddons/ubuntu-base-aarch64:2.1.1
+    FROM: hassioaddons/ubuntu-base-aarch64:2.2.0
   tags:
     - build
     - aarch64
@@ -311,7 +311,7 @@ build:i386:
   <<: *build
   variables:
     ADDON_ARCH: i386
-    FROM: hassioaddons/ubuntu-base-i386:2.1.1
+    FROM: hassioaddons/ubuntu-base-i386:2.2.0
   tags:
     - build
     - i386
@@ -320,7 +320,7 @@ build:amd64:
   <<: *build
   variables:
     ADDON_ARCH: amd64
-    FROM: hassioaddons/ubuntu-base-amd64:2.1.1
+    FROM: hassioaddons/ubuntu-base-amd64:2.2.0
   tags:
     - build
     - amd64
