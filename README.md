@@ -65,14 +65,16 @@ comparison to installing any other Hass.io add-on.
 
 **Note**: _Remember to restart the add-on when the configuration is changed._
 
-Example add-on configuration:
+Example add-on configuration, with all available options:
 
 ```json
 {
     "log_level": "info",
     "ssl": true,
     "certfile": "fullchain.pem",
-    "keyfile": "privkey.pem"
+    "keyfile": "privkey.pem",
+    "memory_max": 2048,
+    "memory_init": 512
 }
 ```
 
@@ -115,6 +117,23 @@ The certificate file to use for SSL.
 The private key file to use for SSL.
 
 **Note**: _The file MUST be stored in `/ssl/`, which is the default for Hass.io_
+
+### Option: `memory_max`
+
+This option allows you to change the amount of memory the UniFi Controller
+is allowed to consume. By default, this is limited to 1 GB. You might want
+to increase this, in order to reduce CPU load or reduce this, in order
+to optimize your system for lower memory usage.
+
+This option takes the number of Megabyte, for example, the default is 1024.
+
+### Option: `memory_init`
+
+This option allows you to change the amount of memory the UniFi Controller
+will initially reserve/consume when starting. By default, this is limited to
+256M.
+
+This option takes the number of Megabyte, for example, the default is 512.
 
 ## Automated backups
 

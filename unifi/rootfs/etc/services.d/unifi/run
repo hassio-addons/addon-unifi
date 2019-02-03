@@ -6,7 +6,26 @@
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh
 
+declare -a options
+declare xmx
+declare xms
+
 hass.log.info 'Starting the UniFi Controller'
 
+xmx=1024
+if hass.config.has_value 'memory_max'; then
+    xmx=$(hass.config.get 'memory_max')
+fi
+
+xms=512
+if hass.config.has_value 'memory_init'; then
+    xms=$(hass.config.get 'memory_init')
+fi
+
+options+=("-Xmx${xmx}m")
+options+=("-Xms${xms}m")
+options+=(-jar /usr/lib/unifi/lib/ace.jar)
+options+=(start)
+
 # Run UniFi
-exec /usr/bin/java -Xmx1024M -jar /usr/lib/unifi/lib/ace.jar start
+exec /usr/bin/java "${options[@]}"

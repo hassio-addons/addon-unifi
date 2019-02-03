@@ -39,10 +39,12 @@
     "keyfile": "privkey.pem"
   },
   "schema": {
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
     "ssl": "bool",
     "certfile": "str",
-    "keyfile": "str"
+    "keyfile": "str",
+    "memory_max": "int?",
+    "memory_init": "int?"
   },
   "environment": {
     "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
