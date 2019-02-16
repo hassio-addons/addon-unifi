@@ -159,6 +159,7 @@ to quickly and easily export sites from one Controller
 - The AP seems stuck in "adopting" state: Please read the installation
   instructions carefully. You need to change some controller settings
   in order for this add-on to work properly.
+   * Using the Ubiquiti Discovery Tool, or SSH'ing into the AP and setting the INFORM after adopting will resolve this
 - This add-on does support ARM-based devices, nevertheless, they must
   at least be an ARMv7 device. (Raspberry Pi 1 and Zero is not supported).
 - When using SSL, the following warning is shown in the add-on logs:
