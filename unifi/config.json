@@ -10,8 +10,8 @@
     "aarch64",
     "amd64",
     "armhf",
-    "armv7"
-    "i386",
+    "armv7",
+    "i386"
   ],
   "map": [
     "config:rw",
