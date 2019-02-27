@@ -168,6 +168,10 @@ to quickly and easily export sites from one Controller
   `Warning: The JKS keystore uses a proprietary format.`. This warning can
   be safely ignored. There is nothing wrong and your add-on will function
   normally.
+- The following error can show up in the log, but can be safely ignored:
+  `INFO: I/O exception (java.net.ConnectException) caught when
+  processing request: Connection refused (Connection refused)`.
+  This is a known issue, however, the add-on functions normally.
 - Due limitation, renewed SSL certificates are not picked up automatically.
   You'd have to restart the add-on in order for UniFi to pick up the change.
 - Due to security policies in the UniFi Controller software, it is currently
