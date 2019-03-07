@@ -6,8 +6,8 @@ variables:
   ADDON_SLUG: "unifi"
   ADDON_TARGET: "unifi"
 
-  ADDON_AARCH64_BASE: "hassioaddons/ubuntu-base-aarch64:2.3.0"
-  ADDON_AMD64_BASE: "hassioaddons/ubuntu-base-amd64:2.3.0"
-  ADDON_ARMHF_BASE: "hassioaddons/ubuntu-base-armhf:2.3.0"
-  ADDON_ARMV7_BASE: "hassioaddons/ubuntu-base-armv7:2.3.0"
-  ADDON_I386_BASE: "hassioaddons/ubuntu-base-i386:2.3.0"
+  ADDON_AARCH64_BASE: "hassioaddons/ubuntu-base-aarch64:2.3.1"
+  ADDON_AMD64_BASE: "hassioaddons/ubuntu-base-amd64:2.3.1"
+  ADDON_ARMHF_BASE: "hassioaddons/ubuntu-base-armhf:2.3.1"
+  ADDON_ARMV7_BASE: "hassioaddons/ubuntu-base-armv7:2.3.1"
+  ADDON_I386_BASE: "hassioaddons/ubuntu-base-i386:2.3.1"
