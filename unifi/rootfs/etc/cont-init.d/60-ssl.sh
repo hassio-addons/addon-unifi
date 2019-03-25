@@ -1,11 +1,8 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: UniFi Controller
 # Handles SSL configuration
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 readonly KEYSTORE="/usr/lib/unifi/data/keystore"
 declare certfile
 declare keyfile
@@ -38,13 +35,13 @@ END
 )
 
 # Stop running this script if SSL is disabled
-if hass.config.false 'ssl'; then
+if bashio::config.false 'ssl'; then
  exit 0
 fi
 
 # Initialize keystore, in case it does not exist yet
-if ! hass.file_exists "${KEYSTORE}"; then
-    hass.log.debug 'Intializing keystore...'
+if ! bashio::fs.file_exists "${KEYSTORE}"; then
+    bashio::log.debug 'Intializing keystore...'
     keytool \
         -genkey \
         -keyalg RSA \
@@ -55,13 +52,13 @@ if ! hass.file_exists "${KEYSTORE}"; then
         -validity 1825 \
         -keysize 4096 \
         -dname "cn=UniFi" || \
-        hass.die "Failed creating UniFi keystore"
+        bashio::exit.nok "Failed creating UniFi keystore"
 fi
 
-hass.log.debug 'Injecting SSL certificate into the controller...'
+bashio::log.debug 'Injecting SSL certificate into the controller...'
 
-certfile="/ssl/$(hass.config.get 'certfile')"
-keyfile="/ssl/$(hass.config.get 'keyfile')"
+certfile="/ssl/$(bashio::config 'certfile')"
+keyfile="/ssl/$(bashio::config 'keyfile')"
 tempcert=$(mktemp)
 
 # Adds Identrust cross-signed CA cert in case of letsencrypt
@@ -72,7 +69,7 @@ else
     cat "${certfile}" > "${tempcert}"
 fi
 
-hass.log.debug 'Preparing certificate in a format UniFi accepts...'
+bashio::log.debug 'Preparing certificate in a format UniFi accepts...'
 openssl pkcs12 \
     -export  \
     -passout pass:aircontrolenterprise \
@@ -81,14 +78,14 @@ openssl pkcs12 \
     -out "${tempcert}" \
     -name unifi
 
-hass.log.debug 'Removing existing certificate from UniFi protected keystore...'
+bashio::log.debug 'Removing existing certificate from UniFi protected keystore...'
 keytool \
     -delete \
     -alias unifi \
     -keystore "${KEYSTORE}" \
     -deststorepass aircontrolenterprise
 
-hass.log.debug 'Inserting certificate into UniFi keystore...'
+bashio::log.debug 'Inserting certificate into UniFi keystore...'
 keytool \
     -trustcacerts \
     -importkeystore \
