@@ -5,6 +5,7 @@ variables:
   ADDON_GITHUB_REPO: "hassio-addons/addon-unifi"
   ADDON_SLUG: "unifi"
   ADDON_TARGET: "unifi"
+  ADDON_LEGACY_TAGS: "true"
 
   ADDON_AARCH64_BASE: "hassioaddons/ubuntu-base-aarch64:3.0.0"
   ADDON_AMD64_BASE: "hassioaddons/ubuntu-base-amd64:3.0.0"
