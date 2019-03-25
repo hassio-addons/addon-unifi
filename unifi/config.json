@@ -45,8 +45,5 @@
     "keyfile": "str",
     "memory_max": "int?",
     "memory_init": "int?"
-  },
-  "environment": {
-    "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
   }
 }
