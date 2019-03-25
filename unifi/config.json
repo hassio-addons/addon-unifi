@@ -34,7 +34,6 @@
   "homeassistant_api": false,
   "host_network": false,
   "options": {
-    "log_level": "info",
     "ssl": true,
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem"
