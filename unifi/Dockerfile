@@ -9,8 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG BUILD_ARCH=amd64
 RUN \
     URL="http://archive.ubuntu.com/ubuntu/" \
-    && if [ "${BUILD_ARCH}" = "armhf" ] \
-        || [ "${BUILD_ARCH}" = "armv7" ] \
+    && if [ "${BUILD_ARCH}" = "armv7" ] \
         || [ "${BUILD_ARCH}" = "aarch64" ]; then \
         URL="http://ports.ubuntu.com/ubuntu-ports/"; \
     fi \
