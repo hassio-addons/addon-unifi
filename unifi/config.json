@@ -28,6 +28,16 @@
     "8880/tcp": 8880,
     "10001/udp": 10001
   },
+  "ports_description": {
+    "1900/udp": "L2 discoverable port",
+    "3478/udp": "Used for STUN",
+    "6789/tcp": "Used for UniFi mobile speed test",
+    "8080/tcp": "Used for device and controller communication",
+    "8443/tcp": "Used for controller web interface and API",
+    "8843/tcp": "Used for HTTPS portal redirection",
+    "8880/tcp": "Used for HTTP portal redirection",
+    "10001/udp": "Used for device discovery"
+  },
   "hassio_api": true,
   "hassio_role": "default",
   "homeassistant_api": false,
