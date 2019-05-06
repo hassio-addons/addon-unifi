@@ -175,6 +175,8 @@ to quickly and easily export sites from one Controller
 - The broadcast feature of the EDU type APs are currently not working with
   this add-on. Due to a limitation in Hass.io, is it currently impossible
   to open the required "range" of ports needed for this feature to work.
+- This add-on cannot support Ingress due to technical limitations of the
+  UniFi software.
 
 ## Changelog & Releases
 
