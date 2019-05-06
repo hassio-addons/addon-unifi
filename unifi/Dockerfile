@@ -22,7 +22,7 @@ RUN \
     && apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        binutils=2.30-21ubuntu1~18.04 \
+        binutils=2.30-21ubuntu1~18.04.1 \
         jsvc=1.0.15-8 \
         libcap2=1:2.25-1.2 \
         mongodb-server=1:2.6.10-0ubuntu1 \
