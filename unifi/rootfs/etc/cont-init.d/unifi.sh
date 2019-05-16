@@ -25,10 +25,10 @@ rm -fr /usr/lib/unifi/data/backup
 ln -s /backup/unifi /usr/lib/unifi/data/backup
 
 #Enables the gateway customization via config.gateway.json
-if ! bashio::fs.directory_exists '/config/unifi'; then
-    mkdir -p /config/unifi
+if ! bashio::fs.directory_exists '/backup/unifi/config'; then
+    mkdir -p /backup/unifi/confif
 fi    
-ln -s /config/unifi /usr/lib/unifi/data/sites/default
+ln -s /backup/unifi/config /usr/lib/unifi/data/sites/
 
 # Enable small files on MongoDB
 if ! bashio::fs.file_exists "${properties}"; then
