@@ -26,7 +26,7 @@ ln -s /backup/unifi /usr/lib/unifi/data/backup
 
 #Enables the gateway customization via config.gateway.json
 if ! bashio::fs.directory_exists '/backup/unifi/config'; then
-    mkdir -p /backup/unifi/confif
+    mkdir -p /backup/unifi/config
 fi    
 ln -s /backup/unifi/config /usr/lib/unifi/data/sites/
 
