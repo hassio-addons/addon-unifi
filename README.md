@@ -150,6 +150,19 @@ This article explains in detail how to use the UniFi Site Export Wizard
 to quickly and easily export sites from one Controller
 (including configuration and devices) to another (e.g., this add-on).
 
+## Using Advanced Configuration
+
+You can use the advanced configuration via config.gateway.json as outlined 
+in this tutorial from Ubiquiti:
+
+<https://help.ubnt.com/hc/en-us/articles/215458888-UniFi-USG-Advanced-Configuration>
+
+The folder to copy your config.gateway.json is in `/backup/unifi/config`. 
+You will have to choose your site you wish to configurate. (Standard = Default)
+You can access this folder using the normal Hass.io methods 
+(e.g., using Samba, Terminal, SSH).
+
+
 ## Known issues and limitations
 
 - The AP seems stuck in "adopting" state: Please read the installation
