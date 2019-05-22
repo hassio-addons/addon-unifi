@@ -158,7 +158,7 @@ in this tutorial from Ubiquiti:
 <https://help.ubnt.com/hc/en-us/articles/215458888-UniFi-USG-Advanced-Configuration>
 
 The folder to copy your config.gateway.json is in `/backup/unifi/config`. 
-You will have to choose your site you wish to configurate. (Standard = Default)
+You will have to choose the site you wish to configure. (Standard = Default)
 You can access this folder using the normal Hass.io methods 
 (e.g., using Samba, Terminal, SSH).
 
