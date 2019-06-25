@@ -1,5 +1,5 @@
 {
-  "name": "UniFi Controller",
+  "name": "UniFi Controller Beta",
   "version": "dev-5.11.31",
   "slug": "unifi",
   "description": "Manage your UniFi network using a web browser",
