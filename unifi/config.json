@@ -4,7 +4,7 @@
   "slug": "unifi",
   "description": "Manage your UniFi network using a web browser",
   "url": "https://github.com/hassio-addons/addon-unifi",
-  "webui": "https://[HOST]:[PORT:8443]",
+  "webui": "https://[HOST]:[PORT:8449]",
   "startup": "services",
   "arch": [
     "aarch64",
@@ -23,7 +23,7 @@
     "3478/udp": 3478,
     "6789/tcp": 6789,
     "8080/tcp": 8080,
-    "8443/tcp": 8443,
+    "8443/tcp": 8449,
     "8843/tcp": 8843,
     "8880/tcp": 8880,
     "10001/udp": 10001
