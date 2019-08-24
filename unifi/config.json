@@ -1,6 +1,6 @@
 {
   "name": "UniFi Controller Beta",
-  "version": "RC-5.11.39v1",
+  "version": "RC-5.11.39v2",
   "slug": "unifi",
   "description": "Manage your UniFi network using a web browser",
   "url": "https://github.com/hassio-addons/addon-unifi",
