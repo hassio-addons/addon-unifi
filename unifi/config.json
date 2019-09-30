@@ -13,7 +13,6 @@
     "i386"
   ],
   "map": [
-    "config:rw",
     "backup:rw",
     "ssl"
   ],
