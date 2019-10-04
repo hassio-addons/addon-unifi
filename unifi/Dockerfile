@@ -7,6 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
 ARG BUILD_ARCH=amd64
+ARG UNIFI_VERSION=5.11.47
 RUN \
     URL="http://archive.ubuntu.com/ubuntu/" \
     && if [ "${BUILD_ARCH}" = "armv7" ] \
@@ -29,7 +30,7 @@ RUN \
         openjdk-8-jdk-headless=8u222-b10-1ubuntu1~18.04.1 \
     \
     && curl -J -L -o /tmp/unifi.deb \
-        "https://dl.ubnt.com/unifi/5.11.47/unifi_sysvinit_all.deb" \
+        "https://dl.ubnt.com/unifi/${UNIFI_VERSION}/unifi_sysvinit_all.deb" \
     \
     && dpkg --install /tmp/unifi.deb \
     \
