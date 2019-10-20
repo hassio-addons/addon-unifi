@@ -127,7 +127,7 @@ This option takes the number of Megabyte, for example, the default is 1024.
 
 This option allows you to change the amount of memory the UniFi Controller
 will initially reserve/consume when starting. By default, this is limited to
-256M.
+512M.
 
 This option takes the number of Megabyte, for example, the default is 512.
 
