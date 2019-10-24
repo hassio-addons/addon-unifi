@@ -150,6 +150,17 @@ This article explains in detail how to use the UniFi Site Export Wizard
 to quickly and easily export sites from one Controller
 (including configuration and devices) to another (e.g., this add-on).
 
+## When you can't access existing controller
+
+In some cases, the Unifi Controller may have been installed on another host, or on the same host as HASS.io exclusive of the HASS.io add-on, and you want the HASS.io add-on to become your primary controller.  You may find yourself in a situation where:
+
+- You can't login to your controller, -or-
+- You don't know the SSH credentials to access each device individually to disconnect them from your current controller and allow adoption by a new controller.
+
+If this is your situation, you will need to factory reset your devices as explained in this article before the new controller will be able to adopt them:
+
+<https://help.ubnt.com/hc/en-us/articles/205146020>
+
 ## Known issues and limitations
 
 - The AP seems stuck in "adopting" state: Please read the installation
