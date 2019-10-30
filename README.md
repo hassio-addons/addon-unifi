@@ -150,13 +150,24 @@ This article explains in detail how to use the UniFi Site Export Wizard
 to quickly and easily export sites from one Controller
 (including configuration and devices) to another (e.g., this add-on).
 
+## Adpoting Devices
+
+For Unifi to adopt other devices, e.g. an Access Point, it is required to change the inform ip address. This addon configures a hostname which is not accessable by other devices. To change this go to Settings > Controller > Controller Settings and set the Controller Hostname/IP to an ip address/hostname of your hassio instance.
+
+Alternatively to manually adopt a device take these steps:
+
+- SSH into the device using `ubnt` as username and `ubnt` as password
+- `$ mca-cli`
+- `$ set-inform http://<IP or adress of hassio>:<device|controller communication port (default:8080)>/inform`
+  - for example `$ set-inform http://192.168.1.14:8080/inform`
+
 ## Known issues and limitations
 
 - The AP seems stuck in "adopting" state: Please read the installation
   instructions carefully. You need to change some controller settings
   in order for this add-on to work properly. Using the Ubiquiti Discovery
   Tool, or SSH'ing into the AP and setting the INFORM after adopting
-  will resolve this.
+  will resolve this. (see: *Adopting Devices*)
 - This add-on does support ARM-based devices, nevertheless, they must
   at least be an ARMv7 device. (Raspberry Pi 1 and Zero is not supported).
 - When using SSL, the following warning is shown in the add-on logs:
