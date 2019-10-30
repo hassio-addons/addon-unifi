@@ -150,11 +150,9 @@ This article explains in detail how to use the UniFi Site Export Wizard
 to quickly and easily export sites from one Controller
 (including configuration and devices) to another (e.g., this add-on).
 
-## Adpoting Devices
+## Manually adopting a Device
 
-For Unifi to adopt other devices, e.g. an Access Point, it is required to change the inform ip address. This addon configures a hostname which is not accessable by other devices. To change this go to Settings > Controller > Controller Settings and set the Controller Hostname/IP to an ip address/hostname of your hassio instance.
-
-Alternatively to manually adopt a device take these steps:
+Alternatively to setting up a custom inform adress (installation steps 7-9) you can manually adopt a device by following these steps:
 
 - SSH into the device using `ubnt` as username and `ubnt` as password
 - `$ mca-cli`
