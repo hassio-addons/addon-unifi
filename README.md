@@ -150,9 +150,9 @@ This article explains in detail how to use the UniFi Site Export Wizard
 to quickly and easily export sites from one Controller
 (including configuration and devices) to another (e.g., this add-on).
 
-## Manually adopting a Device
+## Manually adopting a device
 
-Alternatively to setting up a custom inform adress (installation steps 7-9)
+Alternatively to setting up a custom inform address (installation steps 7-9)
 you can manually adopt a device by following these steps:
 
 - SSH into the device using `ubnt` as username and `ubnt` as password
@@ -166,7 +166,7 @@ you can manually adopt a device by following these steps:
   instructions carefully. You need to change some controller settings
   in order for this add-on to work properly. Using the Ubiquiti Discovery
   Tool, or SSH'ing into the AP and setting the INFORM after adopting
-  will resolve this. (see: *Adopting Devices*)
+  will resolve this. (see: *Manually adopting a device*)
 - This add-on does support ARM-based devices, nevertheless, they must
   at least be an ARMv7 device. (Raspberry Pi 1 and Zero is not supported).
 - When using SSL, the following warning is shown in the add-on logs:
