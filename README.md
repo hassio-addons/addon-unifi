@@ -152,11 +152,12 @@ to quickly and easily export sites from one Controller
 
 ## Manually adopting a Device
 
-Alternatively to setting up a custom inform adress (installation steps 7-9) you can manually adopt a device by following these steps:
+Alternatively to setting up a custom inform adress (installation steps 7-9)
+you can manually adopt a device by following these steps:
 
 - SSH into the device using `ubnt` as username and `ubnt` as password
 - `$ mca-cli`
-- `$ set-inform http://<IP or adress of hassio>:<device|controller communication port (default:8080)>/inform`
+- `$ set-inform http://<IP of Hassio>:<controller port (default:8080)>/inform`
   - for example `$ set-inform http://192.168.1.14:8080/inform`
 
 ## Known issues and limitations
