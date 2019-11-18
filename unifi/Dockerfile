@@ -25,7 +25,7 @@ RUN \
         binutils=2.30-21ubuntu1~18.04.2 \
         jsvc=1.0.15-8 \
         libcap2=1:2.25-1.2 \
-        mongodb-server=1:3.6.3-0ubuntu1 \
+        mongodb-server=1:2.6.10-0ubuntu1 \
         openjdk-8-jdk-headless=8u222-b10-1ubuntu1~18.04.1 \
     \
     && curl -J -L -o /tmp/unifi.deb \
