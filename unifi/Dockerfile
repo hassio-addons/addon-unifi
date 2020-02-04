@@ -26,7 +26,7 @@ RUN \
         jsvc=1.0.15-8 \
         libcap2=1:2.25-1.2 \
         mongodb-server=1:2.6.10-0ubuntu1 \
-        openjdk-8-jdk-headless=8u232-b09-0ubuntu1~18.04.1 \
+        openjdk-8-jdk-headless=8u242-b08-0ubuntu3~18.04 \
     \
     && curl -J -L -o /tmp/unifi.deb \
         "https://dl.ui.com/unifi/5.12.35/unifi_sysvinit_all.deb" \
