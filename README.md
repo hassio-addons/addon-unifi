@@ -60,15 +60,13 @@ comparison to installing any other Hass.io add-on.
 
 Example add-on configuration, with all available options:
 
-```json
-{
-    "log_level": "info",
-    "ssl": true,
-    "certfile": "fullchain.pem",
-    "keyfile": "privkey.pem",
-    "memory_max": 2048,
-    "memory_init": 512
-}
+```yaml
+log_level: info
+ssl: true
+certfile: fullchain.pem
+keyfile: privkey.pem
+memory_max: 2048
+memory_init: 512
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
