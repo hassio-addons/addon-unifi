@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: UniFi Controller
+# Home Assistant Community Add-on: UniFi Controller
 # Configures the UniFi Controller
 # ==============================================================================
 readonly KEYSTORE="/usr/lib/unifi/data/keystore"

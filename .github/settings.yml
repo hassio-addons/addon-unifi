@@ -1,8 +1,8 @@
 ---
 repository:
-  description: "UniFi Controller - Community Hass.io Add-on for Home Assistant"
+  description: "UniFi Controller - Home Assistant Community Add-ons"
   homepage: https://addons.community
-  topics: unifi, unifi-controller, ubiquiti, hassio-addons, hassio, hass, home-assistant, homeassistant
+  topics: unifi, unifi-controller, ubiquiti, addon, addons, home-assistant, homeassistant
   private: false
   has_issues: true
   has_projects: false
