@@ -24,16 +24,16 @@
 The UniFi Controller allows you to manage your UniFi network
 using a web browser.
 
-![The UniFi Controller Hass.io add-on](images/screenshot.jpg)
+![The UniFi Controller add-on](images/screenshot.jpg)
 
 ## About
 
 This add-on runs Ubiquiti Networks' UniFi Controller software, which allows
 you to manage your UniFi network via the web browser. The add-on provides a
-single-click installation and run solution for Hass.io, allowing users to get
-their network up, running, and updated, easily.
+single-click installation and run solution for Home Assistant, allowing users
+to get their network up, running, and updated, easily.
 
-This add-on supports all Hass.io supported architectures, including the
+This add-on supports all Home Assistant supported architectures, including the
 Raspberry Pi.
 
 ## Installation
@@ -49,7 +49,7 @@ comparison to installing any other Home Assistant add-on.
 1. After completing the wizard, log in with the credentials just created.
 1. Go to the settings (gears icon in the bottom left) -> Controller (tab).
 1. Change the `Controller Hostname/IP` to match the IP or hostname of
-   the device running Hass.io.
+   the device running Home Assistant.
 1. Check the box `Override inform host with controller hostname/IP`.
 1. Hit the "Apply Changes" button to activate the settings.
 1. Ready to go!
@@ -132,7 +132,7 @@ The UniFi Controller ships with an automated backup feature. This feature works
 but has been adjusted to put the created backups in a different location.
 
 Backups are created in `/backup/unifi`. You can access this folder using
-the normal Hass.io methods (e.g., using Samba, Terminal, SSH).
+the normal Home Assistant methods (e.g., using Samba, Terminal, SSH).
 
 ## Migrating from an existing controller
 
@@ -178,7 +178,7 @@ you can manually adopt a device by following these steps:
   impossible to add the UniFI web interface to your Home Assistant frontend
   using a `panel_iframe`.
 - The broadcast feature of the EDU type APs are currently not working with
-  this add-on. Due to a limitation in Hass.io, is it currently impossible
+  this add-on. Due to a limitation in Home Assistant, is it currently impossible
   to open the required "range" of ports needed for this feature to work.
 - This add-on cannot support Ingress due to technical limitations of the
   UniFi software.
