@@ -137,7 +137,7 @@ the normal Home Assistant methods (e.g., using Samba, Terminal, SSH).
 ## Migrating from an existing controller
 
 If you want to migrate from an existing controller to the controller provided
-by this addon, Ubiquiti has an exellent tutorial on this:
+by this addon, Ubiquiti has an excellent tutorial on this:
 
 <https://help.ubnt.com/hc/en-us/articles/115002869188>
 
