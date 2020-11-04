@@ -18,6 +18,18 @@ fi
 rm -fr /usr/lib/unifi/data
 ln -s /data/unifi/data /usr/lib/unifi/data
 
+# Link gateway.config.json from sites folder in /config/unifi
+if bashio::fs.directory_exists '/config/unifi/sites'; then
+    mkdir -p /usr/lib/unifi/data/sites
+    for file in /config/unifi/sites/*/gateway.config.json; do
+        if bashio::fs.file_exists "${file}"; then
+            site=$(basename $(dirname "${file}"))
+            mkdir -p "/usr/lib/unifi/data/sites/${site}"
+            ln -f -s "${file}" "/usr/lib/unifi/data/sites/${site}/"
+        fi
+    done
+fi
+
 if ! bashio::fs.directory_exists '/backup/unifi'; then
     mkdir -p /backup/unifi
 fi

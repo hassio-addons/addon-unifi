@@ -8,7 +8,7 @@
   "startup": "services",
   "arch": ["aarch64", "amd64", "armv7", "i386"],
   "init": false,
-  "map": ["backup:rw", "ssl"],
+  "map": ["backup:rw", "config:ro", "ssl"],
   "boot": "auto",
   "ports": {
     "161/udp": null,
