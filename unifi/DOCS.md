@@ -127,6 +127,18 @@ you can manually adopt a device by following these steps:
 - `$ set-inform http://<IP of Hassio>:<controller port (default:8080)>/inform`
   - for example `$ set-inform http://192.168.1.14:8080/inform`
 
+## USG Advanced Configuration using config.gateway.json
+
+The Unifi Security Gateway (USG and USG-PRO-4) can receive custom settings that
+aren't available in the web GUI:
+
+<https://help.ubnt.com/hc/en-us/articles/215458888-UniFi-USG-Advanced-Configuration>
+
+This addon allows you to provide and modify this file by placing it in
+`/config/unifi/sites/<site_ID>/config.gateway.json`
+
+Replace `<site_ID>` according to the above documentation from Unifi.
+
 ## Known issues and limitations
 
 - The AP seems stuck in "adopting" state: Please read the installation
