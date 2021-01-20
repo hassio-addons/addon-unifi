@@ -1,8 +1,8 @@
 {
   "build_from": {
-    "aarch64": "hassioaddons/ubuntu-base-aarch64:5.2.2",
-    "amd64": "hassioaddons/ubuntu-base-amd64:5.2.2",
-    "armv7": "hassioaddons/ubuntu-base-armv7:5.2.2",
-    "i386": "hassioaddons/ubuntu-base-i386:5.2.2"
+    "aarch64": "ghcr.io/hassio-addons/ubuntu-base/aarch64:6.0.0",
+    "amd64": "ghcr.io/hassio-addons/ubuntu-base/amd64:6.0.0",
+    "armv7": "ghcr.io/hassio-addons/ubuntu-base/armv7:6.0.0",
+    "i386": "ghcr.io/hassio-addons/ubuntu-base/i386:6.0.0"
   }
 }
