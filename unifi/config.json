@@ -10,6 +10,7 @@
   "init": false,
   "map": ["backup:rw", "ssl"],
   "ports": {
+    "22/tcp": 8022,
     "161/udp": null,
     "1900/udp": null,
     "3478/udp": 3478,
@@ -22,6 +23,7 @@
     "10001/udp": 10001
   },
   "ports_description": {
+    "22/tcp": "Used for SSH",
     "161/udp": "Used for SNMP Access",
     "1900/udp": "L2 discoverable port",
     "3478/udp": "Used for STUN",
