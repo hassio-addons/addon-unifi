@@ -5,6 +5,7 @@
 # ==============================================================================
 readonly KEYSTORE="/usr/lib/unifi/data/keystore"
 readonly properties="/data/unifi/data/system.properties"
+readonly ROOT_CHAIN
 declare certfile
 declare keyfile
 declare tempcert
@@ -37,7 +38,7 @@ sed -i \
 
 # Identrust cross-signed CA cert needed by the java keystore for import.
 # Can get original here: https://www.identrust.com/certificates/trustid/root-download-x3.html
-readonly ROOT_CHAIN=$(cat <<-END
+ROOT_CHAIN=$(cat <<-END
 -----BEGIN CERTIFICATE-----
 MIIDSjCCAjKgAwIBAgIQRK+wgNajJ7qJMDmGLvhAazANBgkqhkiG9w0BAQUFADA/
 MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
