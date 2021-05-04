@@ -5,9 +5,9 @@
 # ==============================================================================
 readonly KEYSTORE="/usr/lib/unifi/data/keystore"
 readonly properties="/data/unifi/data/system.properties"
-readonly ROOT_CHAIN
 declare certfile
 declare keyfile
+declare root_chain
 declare tempcert
 
 bashio::config.require.ssl
@@ -38,7 +38,7 @@ sed -i \
 
 # Identrust cross-signed CA cert needed by the java keystore for import.
 # Can get original here: https://www.identrust.com/certificates/trustid/root-download-x3.html
-ROOT_CHAIN=$(cat <<-END
+root_chain=$(cat <<-END
 -----BEGIN CERTIFICATE-----
 MIIDSjCCAjKgAwIBAgIQRK+wgNajJ7qJMDmGLvhAazANBgkqhkiG9w0BAQUFADA/
 MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
@@ -91,7 +91,7 @@ tempcert=$(mktemp)
 
 # Adds Identrust cross-signed CA cert in case of letsencrypt
 if [[ $(openssl x509 -noout -ocsp_uri -in "${certfile}") == *"letsencrypt"* ]]; then
-    echo "${ROOT_CHAIN}" > "${tempcert}"
+    echo "${root_chain}" > "${tempcert}"
     cat "${certfile}" >> "${tempcert}"
 else
     cat "${certfile}" > "${tempcert}"
