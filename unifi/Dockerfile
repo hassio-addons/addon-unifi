@@ -26,11 +26,11 @@ RUN \
         jsvc=1.0.15-8 \
         libcap2=1:2.25-1.2 \
         logrotate=3.11.0-0.1ubuntu1 \
-        mongodb-server=1:2.6.10-0ubuntu1 \
+        mongodb-server=1:3.6.13-0ubuntu1 \
         openjdk-8-jdk-headless=8u292-b10-0ubuntu1~18.04 \
     \
     && curl -J -L -o /tmp/unifi.deb \
-        "https://dl.ui.com/unifi/6.2.23/unifi_sysvinit_all.deb" \
+        "https://dl.ui.com/unifi/6.2.25/unifi_sysvinit_all.deb" \
     \
     && dpkg --install /tmp/unifi.deb \
     \
