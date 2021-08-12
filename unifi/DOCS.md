@@ -65,7 +65,7 @@ is allowed to consume. By default, this is limited to 1 GB. You might want
 to increase this, in order to reduce CPU load or reduce this, in order
 to optimize your system for lower memory usage.
 
-This option takes the number of Megabyte, for example, the default is 1024.
+This option takes the number of Megabyte, for example, the default is 256.
 
 ### Option: `memory_init`
 
@@ -73,7 +73,7 @@ This option allows you to change the amount of memory the UniFi Controller
 will initially reserve/consume when starting. By default, this is limited to
 512M.
 
-This option takes the number of Megabyte, for example, the default is 512.
+This option takes the number of Megabyte, for example, the default is 128.
 
 ## Automated backups
 
