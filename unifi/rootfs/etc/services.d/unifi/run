@@ -9,12 +9,12 @@ declare xms
 
 bashio::log.info 'Starting the UniFi Controller...'
 
-xmx=1024
+xmx=256
 if bashio::config.has_value 'memory_max'; then
     xmx=$(bashio::config 'memory_max')
 fi
 
-xms=512
+xms=128
 if bashio::config.has_value 'memory_init'; then
     xms=$(bashio::config 'memory_init')
 fi
