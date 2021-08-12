@@ -8,6 +8,7 @@
   "startup": "services",
   "arch": ["aarch64", "amd64"],
   "init": false,
+  "snapshot": "cold",
   "map": ["backup:rw", "ssl"],
   "ports": {
     "161/udp": null,

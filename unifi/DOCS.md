@@ -158,6 +158,9 @@ you can manually adopt a device by following these steps:
   to open the required "range" of ports needed for this feature to work.
 - This add-on cannot support Ingress due to technical limitations of the
   UniFi software.
+- During making a backup of this add-on via Home Assistant, this add-on will
+  temporary shutdown and start up after the backup has finished. This prevents
+  data corruption during taking the backup.
 
 ## Changelog & Releases
 
