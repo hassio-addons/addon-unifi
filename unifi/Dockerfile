@@ -8,25 +8,14 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base system
 ARG BUILD_ARCH=amd64
 RUN \
-    URL="http://archive.ubuntu.com/ubuntu/" \
-    && if [ "${BUILD_ARCH}" = "armv7" ] \
-        || [ "${BUILD_ARCH}" = "aarch64" ]; then \
-        URL="http://ports.ubuntu.com/ubuntu-ports/"; \
-    fi \
-    && echo "deb ${URL} xenial universe" \
-        > /etc/apt/sources.list.d/xenial-universe.list \
-    \
-    && echo "deb ${URL} xenial main" \
-        > /etc/apt/sources.list.d/xenial-main.list \
-    \
-    && apt-get update \
+    apt-get update \
     \
     && apt-get install -y --no-install-recommends \
         binutils=2.30-21ubuntu1~18.04.5 \
         jsvc=1.0.15-8 \
         libcap2=1:2.25-1.2 \
         logrotate=3.11.0-0.1ubuntu1 \
-        mongodb-server=1:2.6.10-0ubuntu1 \
+        mongodb-server=1:3.6.3-0ubuntu1.1 \
         openjdk-8-jdk-headless=8u292-b10-0ubuntu1~18.04 \
     \
     && curl -J -L -o /tmp/unifi.deb \
