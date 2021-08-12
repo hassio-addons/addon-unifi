@@ -10,7 +10,7 @@ ARG BUILD_ARCH=amd64
 RUN \
     apt-get update \
     && apt-get install -y --no-install-recommends \
-        gnupg2 \
+        gnupg2=2.2.4-1ubuntu1.4 \
     \
     && curl -fsSL "https://www.mongodb.org/static/pgp/server-3.4.asc" \
         | apt-key add -\
