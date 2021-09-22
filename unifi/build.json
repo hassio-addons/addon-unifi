@@ -1,6 +1,6 @@
 {
   "build_from": {
     "aarch64": "ghcr.io/hassio-addons/ubuntu-base/aarch64:6.2.1",
-    "amd64": "ghcr.io/hassio-addons/ubuntu-base/amd64:7.0.0"
+    "amd64": "ghcr.io/hassio-addons/ubuntu-base/amd64:6.2.1"
   }
 }
