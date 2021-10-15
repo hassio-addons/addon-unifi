@@ -5,8 +5,12 @@ FROM ${BUILD_FROM}
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
+# Set Unifi args
+ARG UNIFI_VERSION
+# ARG UNIFI_BRANCH="stable"  Change if you need to move to beta, and edit latest version check from 'stable' to '${UNIFI_BRANCH}'
 # Setup base system
 ARG BUILD_ARCH=amd64
+
 RUN \
     apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -18,29 +22,33 @@ RUN \
         > /etc/apt/sources.list.d/mongodb.list \
     \
     && apt-get update \
-    && apt-get install -y --no-install-recommends \
-        binutils=2.30-21ubuntu1~18.04.5 \
-        jsvc=1.0.15-8 \
-        libcap2=1:2.25-1.2 \
-        libssl1.0.0=1.0.2n-1ubuntu5.6 \
-        logrotate=3.11.0-0.1ubuntu1 \
-        mongodb-org-server=3.4.24 \
-        openjdk-8-jdk-headless=8u292-b10-0ubuntu1~18.04 \
+    && apt-get install -y \
+	binutils \
+	jsvc \
+	libcap2 \
+	logrotate \
+	mongodb-server \
+	openjdk-8-jre-headless \
+	wget \
     \
-    && curl -J -L -o /tmp/unifi.deb \
-        "https://dl.ui.com/unifi/6.2.26/unifi_sysvinit_all.deb" \
-    \
-    && dpkg --install /tmp/unifi.deb \
-    \
-    && apt-get remove -y --purge \
-        gnupg2 \
-    \
-    && apt-get clean \
-    && rm -fr \
-        /tmp/* \
-        /root/.gnupg \
-        /var/{cache,log}/* \
-        /var/lib/apt/lists/*
+    && echo "**** check latest version ****" 
+    && \
+    if [ -z ${UNIFI_VERSION+x} ]; then \
+	 UNIFI_VERSION=$(curl -sX GET http://dl-origin.ubnt.com/unifi/debian/dists/stable/ubiquiti/binary-amd64/Packages \
+	 |grep -A 7 -m 1 'Package: unifi' \
+	 | awk -F ': ' '/Version/{print $2;exit}' \
+	 | awk -F '-' '{print $1}'); \
+    fi 
+    && curl -o \
+    /tmp/unifi.deb -L \
+	"https://dl.ui.com/unifi/${UNIFI_VERSION}/unifi_sysvinit_all.deb" && \
+    dpkg -i /tmp/unifi.deb 
+    && echo "**** cleanup ****" && \
+    apt-get clean && \
+    rm -rf \
+	/tmp/* \
+	/var/lib/apt/lists/* \
+	/var/tmp/*
 
 # Copy root filesystem
 COPY rootfs /
