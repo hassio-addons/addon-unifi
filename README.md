@@ -33,9 +33,6 @@ you to manage your UniFi network via the web browser. The add-on provides a
 single-click installation and run solution for Home Assistant, allowing users
 to get their network up, running, and updated, easily.
 
-This add-on supports all Home Assistant supported architectures, including the
-Raspberry Pi.
-
 [:books: Read the full add-on documentation][docs]
 
 ## Support
