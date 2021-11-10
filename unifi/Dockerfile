@@ -19,7 +19,7 @@ RUN \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        binutils=2.30-21ubuntu1~18.04.5 \
+        binutils=2.30-21ubuntu1~18.04.7 \
         jsvc=1.0.15-8 \
         libcap2=1:2.25-1.2 \
         libssl1.0.0=1.0.2n-1ubuntu5.6 \
