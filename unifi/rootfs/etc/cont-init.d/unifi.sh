@@ -1,12 +1,12 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Home Assistant Community Add-on: UniFi Controller
-# Configures the UniFi Controller
+# Home Assistant Community Add-on: UniFi Network Application
+# Configures the UniFi Network Application
 # ==============================================================================
 readonly KEYSTORE="/usr/lib/unifi/data/keystore"
 readonly properties="/data/unifi/data/system.properties"
 
-# Ensures the data of the UniFi controller is store outside the container
+# Ensures the data of the UniFi Network Application is store outside the container
 if ! bashio::fs.directory_exists '/data/unifi/data'; then
     mkdir -p /data/unifi/data
 fi

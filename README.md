@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: UniFi Controller
+# Home Assistant Community Add-on: UniFi Network Application
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -21,17 +21,17 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-The UniFi Controller allows you to manage your UniFi network
+The UniFi Network Application allows you to manage your UniFi network
 using a web browser.
 
-![The UniFi Controller add-on](images/screenshot.jpg)
+![The UniFi Network Application add-on](images/screenshot.jpg)
 
 ## About
 
-This add-on runs Ubiquiti Networks' UniFi Controller software, which allows
-you to manage your UniFi network via the web browser. The add-on provides a
-single-click installation and run solution for Home Assistant, allowing users
-to get their network up, running, and updated, easily.
+This add-on runs Ubiquiti Networks' UniFi Network Application software, which
+allows you to manage your UniFi network via the web browser. The add-on
+provides a single-click installation and run solution for Home Assistant,
+allowing users to get their network up, running, and updated, easily.
 
 [:books: Read the full add-on documentation][docs]
 
