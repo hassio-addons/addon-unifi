@@ -7,7 +7,8 @@ declare -a options
 declare xmx
 declare xms
 
-bashio::log.info 'Starting the UniFi Network Application...'
+bashio::log.info 'Now starting the UniFi Network Application...'
+bashio::log.info 'Note: No add-on specific logs beyond this point.'
 
 xmx=256
 if bashio::config.has_value 'memory_max'; then
