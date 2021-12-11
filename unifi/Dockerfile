@@ -18,7 +18,7 @@ RUN \
         openjdk-8-jdk-headless=8u292-b10-0ubuntu1~20.04 \
     \
     && curl -J -L -o /tmp/unifi.deb \
-        "https://dl.ui.com/unifi/6.5.53/unifi_sysvinit_all.deb" \
+        "https://dl.ui.com/unifi/6.5.54-3b5d40203c/unifi_sysvinit_all.deb" \
     \
     && dpkg --install /tmp/unifi.deb \
     && apt-get clean \
