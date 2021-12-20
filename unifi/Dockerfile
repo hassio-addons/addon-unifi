@@ -15,7 +15,7 @@ RUN \
         libcap2=1:2.32-1 \
         logrotate=3.14.0-4ubuntu3 \
         mongodb-server=1:3.6.9+really3.6.8+90~g8e540c0b6d-0ubuntu5.3 \
-        openjdk-8-jdk-headless=8u292-b10-0ubuntu1~20.04 \
+        openjdk-8-jdk-headless=8u312-b07-0ubuntu1~20.04 \
     \
     && curl -J -L -o /tmp/unifi.deb \
         "https://dl.ui.com/unifi/6.5.55/unifi_sysvinit_all.deb" \
