@@ -83,17 +83,6 @@ location.
 Backups are created in `/backup/unifi`. You can access this folder using
 the normal Home Assistant methods (e.g., using Samba, Terminal, SSH).
 
-## Migrating from an existing controller
-
-If you want to migrate from an existing controller to the controller provided
-by this addon, Ubiquiti has an excellent tutorial on this:
-
-<https://help.ubnt.com/hc/en-us/articles/115002869188>
-
-This article explains in detail how to use the UniFi Site Export Wizard
-to quickly and easily export sites from one Controller
-(including configuration and devices) to another (e.g., this add-on).
-
 ## Manually adopting a device
 
 Alternatively to setting up a custom inform address (installation steps 7-9)
