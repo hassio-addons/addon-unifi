@@ -86,13 +86,11 @@ the normal Home Assistant methods (e.g., using Samba, Terminal, SSH).
 ## Migrating from an existing controller
 
 If you want to migrate from an existing controller to the controller provided
-by this addon, Ubiquiti has an excellent tutorial on this:
+by this addon, Ubiquiti has instructions on how to back up your old controller and restore the configuration:
 
-<https://help.ubnt.com/hc/en-us/articles/115002869188>
+<https://help.ui.com/hc/en-us/articles/204952144-UniFi-How-to-Create-and-Restore-a-Backup>
 
-This article explains in detail how to use the UniFi Site Export Wizard
-to quickly and easily export sites from one Controller
-(including configuration and devices) to another (e.g., this add-on).
+Should the above link no longer be available, please search the [Unifi support pages][ui-help] for backing up & restoring your controller.
 
 ## Manually adopting a device
 
@@ -201,3 +199,4 @@ SOFTWARE.
 [reddit]: https://reddit.com/r/homeassistant
 [releases]: https://github.com/hassio-addons/addon-unifi/releases
 [semver]: http://semver.org/spec/v2.0.0.htm
+[ui-help]: https://help.ui.com/
