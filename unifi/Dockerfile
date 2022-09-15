@@ -23,8 +23,10 @@ RUN \
     && apt-get clean \
     && rm -fr \
         /tmp/* \
-        /var/{cache,log}/* \
-        /var/lib/apt/lists/*
+        /var/cache/* \
+        /var/lib/apt/lists/* \
+        /var/log/*.log \
+        /var/log/apt
 
 # Copy root filesystem
 COPY rootfs /
