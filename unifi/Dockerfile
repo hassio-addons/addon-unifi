@@ -31,6 +31,10 @@ RUN \
 # Copy root filesystem
 COPY rootfs /
 
+# Health check
+HEALTHCHECK --start-period=5m \
+    CMD curl --insecure --fail https://localhost:8443 || exit 1
+
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
