@@ -94,7 +94,7 @@ you can manually adopt a device by following these steps:
 - SSH into the device using `ubnt` as username and `ubnt` as password
 - `$ mca-cli`
 - `$ set-inform http://<IP of Hassio>:<controller port (default:8080)>/inform`
-   - for example `$ set-inform http://192.168.1.14:8080/inform`
+  - for example `$ set-inform http://192.168.1.14:8080/inform`
 
 ## Known issues and limitations
 
