@@ -9,7 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apt-get update \
     && apt-get install -y --no-install-recommends \
-        binutils=2.34-6ubuntu1.4 \
+        binutils=2.34-6ubuntu1.6 \
         jsvc=1.0.15-8 \
         libcap2=1:2.32-1 \
         logrotate=3.14.0-4ubuntu3 \
