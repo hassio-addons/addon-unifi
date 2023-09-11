@@ -14,10 +14,10 @@ RUN \
         libcap2=1:2.32-1 \
         logrotate=3.14.0-4ubuntu3 \
         mongodb-server=1:3.6.9+really3.6.8+90~g8e540c0b6d-0ubuntu5.3 \
-        openjdk-11-jdk-headless=11.0.19+7~us1-0ubuntu1~20.04.1 \
+        openjdk-17-jre-headless=17.0.8.1+1~us1-0ubuntu1~20.04.1 \
     \
     && curl -J -L -o /tmp/unifi.deb \
-        "https://dl.ui.com/unifi/7.4.162/unifi_sysvinit_all.deb" \
+        "https://dl.ui.com/unifi/7.5.174/unifi_sysvinit_all.deb" \
     \
     && dpkg --install /tmp/unifi.deb \
     && apt-get clean \
