@@ -23,6 +23,17 @@ fi
 
 options+=("-Xmx${xmx}m")
 options+=("-Xms${xms}m")
+options+=(-Dapple.awt.UIElement=true)
+options+=(-Dfile.encoding=UTF-8)
+options+=(-Djava.awt.headless=true)
+options+=(-XX:+CrashOnOutOfMemoryError)
+options+=(-XX:+ExitOnOutOfMemoryError)
+options+=(-XX:+UseParallelGC)
+options+=(--add-opens=java.base/java.io=ALL-UNNAMED)
+options+=(--add-opens=java.base/java.lang=ALL-UNNAMED)
+options+=(--add-opens=java.base/java.time=ALL-UNNAMED)
+options+=(--add-opens=java.base/sun.security.util=ALL-UNNAMED)
+options+=(--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED)
 options+=(-jar /usr/lib/unifi/lib/ace.jar)
 options+=(start)
 
