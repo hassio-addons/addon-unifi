@@ -17,7 +17,7 @@ RUN \
         openjdk-17-jdk-headless=17* \
     \
     && curl -J -L -o /tmp/unifi.deb \
-        "https://dl.ui.com/unifi/8.0.24/unifi_sysvinit_all.deb" \
+        "https://dl.ui.com/unifi/8.0.26/unifi_sysvinit_all.deb" \
     \
     && dpkg --install /tmp/unifi.deb \
     && apt-get clean \
