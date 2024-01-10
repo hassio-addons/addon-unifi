@@ -109,6 +109,7 @@ you can manually adopt a device by following these steps:
     INFO: I/O exception (java.net.ConnectException) caught when processing
     request: Connection refused (Connection refused)
   ```
+
   This is a known issue, however, the add-on functions normally.
 
 - Due to security policies in the UniFi Network Application software, it is
