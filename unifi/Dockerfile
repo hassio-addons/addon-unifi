@@ -8,6 +8,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base system
 RUN \
     apt-get update \
+    && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends \
         binutils=2.34-6ubuntu1.7 \
         libcap2=1:2.32-1 \
