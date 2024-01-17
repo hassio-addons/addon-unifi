@@ -3,6 +3,7 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/ubuntu-base:9.0.4
 FROM ${BUILD_FROM}
 
 # Set shell
+ARG BUILD_ARCH=amd64
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
@@ -14,14 +15,19 @@ RUN \
         logrotate=3.19.0-1ubuntu1.1 \
         openjdk-17-jre-headless=17* \
     \
-    && curl -J -L -o /usr/share/keyrings/mongodb-server-7.0.gpg https://pgp.mongodb.com/server-7.0.pub \
-    && echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" >/etc/apt/sources.list.d/mongodb-org-7.0.list \
+    && pkgname=libssl1.1_1.1.1f-1ubuntu2.22 \
+    && if [ "${BUILD_ARCH}" = "aarch64" ]; then pkgurl="http://ports.ubuntu.com/pool/main/o/openssl/${pkgname}_arm64.deb"; fi \
+    && if [ "${BUILD_ARCH}" = "amd64" ]; then pkgurl="http://security.ubuntu.com/ubuntu/pool/main/o/openssl/${pkgname}_amd64.deb"; fi \
+    && curl -L -o /tmp/libssl.deb "${pkgurl}" \
+    && dpkg --install "/tmp/libssl.deb" \
+    && curl -J -L -o /etc/apt/keyrings/mongodb-server-4.4.gpg https://pgp.mongodb.com/server-4.4.pub \
+    && echo "deb [ arch=amd64,arm64 signed-by=/etc/apt/keyrings/mongodb-server-4.4.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" >/etc/apt/sources.list.d/mongodb-org-4.4.list \
     && apt-get update \
-    && apt-get install -y --no-install-recommends mongodb-org-server=7.0.7 \
+    && apt-get install -y --no-install-recommends mongodb-org-server=4.4.29 \
     && curl -J -L -o /tmp/unifi.deb \
         "https://dl.ui.com/unifi/8.0.28/unifi_sysvinit_all.deb" \
     \
-    && dpkg --install --ignore-depends=mongodb-org-server /tmp/unifi.deb \
+    && dpkg --install /tmp/unifi.deb \
     && apt-get clean \
     && rm -fr \
         /tmp/* \
@@ -38,7 +44,6 @@ HEALTHCHECK --start-period=5m \
     CMD curl --insecure --fail https://localhost:8443 || exit 1
 
 # Build arguments
-ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_DESCRIPTION
 ARG BUILD_NAME
