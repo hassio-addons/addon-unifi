@@ -22,7 +22,7 @@ comparison to installing any other Home Assistant add-on.
 1. After completing the wizard, log in with the credentials just created.
 1. Go to the settings (gears icon in the bottom left) -> System ->
    Advanced.
-1. Toggle `Override Inform Host`.
+1. Next to the `Inform Host` label, click the checkbox option for `Override` so that is now "checked".
 1. Change the `Host for Inform` to match the IP or hostname of
    the device running Home Assistant.
 1. Hit the "Apply Changes" button to activate the settings.
