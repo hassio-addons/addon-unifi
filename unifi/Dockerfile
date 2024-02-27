@@ -13,9 +13,12 @@ RUN \
         binutils=2.34-6ubuntu1.9 \
         libcap2=1:2.32-1ubuntu0.1 \
         logrotate=3.14.0-4ubuntu3 \
-        mongodb-server=1:3.6.9+really3.6.8+90~g8e540c0b6d-0ubuntu5.3 \
         openjdk-17-jre-headless=17* \
     \
+    && curl -J -L -o /usr/share/keyrings/mongodb-server-4.4.gpg https://pgp.mongodb.com/server-4.4.pub \
+    && echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-4.4.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" >/etc/apt/sources.list.d/mongodb-org-4.4.list \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends mongodb-org-server=4.4.29 \
     && curl -J -L -o /tmp/unifi.deb \
         "https://dl.ui.com/unifi/8.0.28/unifi_sysvinit_all.deb" \
     \
