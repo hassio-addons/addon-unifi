@@ -20,16 +20,16 @@ fi
 rm -fr /usr/lib/unifi/data/backup
 ln -s /backup/unifi /usr/lib/unifi/data/backup
 
-# Enable small files on MongoDB
-if ! bashio::fs.file_exists "${properties}"; then
-    touch "${properties}"
-    echo "unifi.db.extraargs=--smallfiles" > "${properties}"
-fi
-
-#shellcheck disable=SC2016
+# Remove --smallfiles argument from properties file, it's no longer present in mongoDB >= 4.2
+# https://www.mongodb.com/docs/v4.2/reference/configuration-options/#removed-mmapv1-options
+if bashio::fs.file_exists "${properties}"; then
 sed -i \
-    '/^unifi.db.extraargs=/{h;s/=.*/=--smallfiles/};${x;/^$/{s//unifi.db.extraargs=--smallfiles/;H};x}' \
+    's/^\(unifi.db.extraargs=.*\)--smallfiles/\1/' \
     "${properties}"
+sed -i \
+    '/^unifi.db.extraargs= *$/d' \
+    "${properties}"
+fi
 
 # If there is no keystore yet, we are good to go
 if ! bashio::fs.file_exists "${KEYSTORE}"; then
