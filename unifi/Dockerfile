@@ -1,9 +1,8 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/ubuntu-base:9.0.4
+ARG BUILD_FROM=ghcr.io/hassio-addons/ubuntu-base:8.2.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
 # Set shell
-ARG BUILD_ARCH=amd64
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
@@ -11,19 +10,12 @@ RUN \
     apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends \
-        binutils=2.38-4ubuntu2.6 \
-        logrotate=3.19.0-1ubuntu1.1 \
+        binutils=2.34-6ubuntu1.9 \
+        libcap2=1:2.32-1ubuntu0.1 \
+        logrotate=3.14.0-4ubuntu3 \
+        mongodb-server=1:3.6.9+really3.6.8+90~g8e540c0b6d-0ubuntu5.3 \
         openjdk-17-jre-headless=17* \
     \
-    && pkgname=libssl1.1_1.1.1f-1ubuntu2.22 \
-    && if [ "${BUILD_ARCH}" = "aarch64" ]; then pkgurl="http://ports.ubuntu.com/pool/main/o/openssl/${pkgname}_arm64.deb"; fi \
-    && if [ "${BUILD_ARCH}" = "amd64" ]; then pkgurl="http://security.ubuntu.com/ubuntu/pool/main/o/openssl/${pkgname}_amd64.deb"; fi \
-    && curl -L -o /tmp/libssl.deb "${pkgurl}" \
-    && dpkg --install "/tmp/libssl.deb" \
-    && curl -J -L -o /etc/apt/keyrings/mongodb-server-4.4.gpg https://pgp.mongodb.com/server-4.4.pub \
-    && echo "deb [ arch=amd64,arm64 signed-by=/etc/apt/keyrings/mongodb-server-4.4.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" >/etc/apt/sources.list.d/mongodb-org-4.4.list \
-    && apt-get update \
-    && apt-get install -y --no-install-recommends mongodb-org-server=4.4.29 \
     && curl -J -L -o /tmp/unifi.deb \
         "https://dl.ui.com/unifi/8.1.113/unifi_sysvinit_all.deb" \
     \
@@ -44,6 +36,7 @@ HEALTHCHECK --start-period=5m \
     CMD curl --insecure --fail https://localhost:8443 || exit 1
 
 # Build arguments
+ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_DESCRIPTION
 ARG BUILD_NAME
