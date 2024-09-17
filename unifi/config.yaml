@@ -1,6 +1,6 @@
 ---
 name: UniFi Network Application
-version: 1.0.0
+version: 1.1.0
 slug: unifi
 description: Manage your UniFi network using a web browser
 url: https://github.com/blaubaer/ha-addon-unifi
