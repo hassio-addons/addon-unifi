@@ -1,0 +1,93 @@
+name: Pull-Requests Images
+
+env:
+  LABEL_NAME: "test image"
+  WORKFLOW_CI_FN: "ci.yaml"
+  ADDONS: "unifi"
+
+  GITHUB_TOKEN: ${{ github.token }}
+  GITHUB_PR_ID: ${{github.event.number}}
+  GITHUB_EVENT_ACTION: ${{github.event.action}}
+  GITHUB_OWNER_TYPE: ${{github.event.repository.owner.type == 'User' && 'user' || 'org'}}
+
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{github.event.number}}
+
+on:
+  pull_request:
+    types:
+      - labeled
+      - unlabeled
+      - closed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Inspect
+    if: github.event_name == 'pull_request'
+    permissions:
+      pull-requests: read
+      actions: write
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: .build/go.mod
+          check-latest: true
+          cache-dependency-path: |
+            .build/go.sum
+
+      - name: Execute
+        id: refs
+        working-directory: .build
+        run: |
+          set -ex
+          
+          function hasLabel() {
+            go run . has-pr-label "${GITHUB_PR_ID}" "${LABEL_NAME}" && return 0 || retVal=$?
+            if [ "$retVal" -eq 1 ]; then
+              return 1
+            fi
+            exit $retVal
+          }
+          
+          function isOpen() {
+            go run . is-pr-open "${GITHUB_PR_ID}" && return 0 || retVal=$?
+            if [ "$retVal" -eq 1 ]; then
+              return 1
+            fi
+            exit $retVal
+          }
+          
+          function triggerCiWorkflow() {
+            go run . rerun-pr-workflow "${GITHUB_PR_ID}" "${WORKFLOW_CI_FN}"
+          }
+          
+          function removeImages() {
+            go run . --package-subs="${ADDONS}" delete-image-tag "pr-${GITHUB_PR_ID}"
+          }
+          
+          if [ "$GITHUB_EVENT_ACTION" == "labeled" ]; then
+            if [ "${{github.event.label.name}}" == "${LABEL_NAME}" ] && isOpen; then
+              triggerCiWorkflow
+            fi
+          
+          elif [ "$GITHUB_EVENT_ACTION" == "unlabeled" ]; then
+            if [ "${{github.event.label.name}}" == "${LABEL_NAME}" ] && isOpen; then
+              removeImages
+            fi
+          
+          elif [ "$GITHUB_EVENT_ACTION" == "closed" ]; then
+            if hasLabel; then
+              removeImages
+            fi
+          
+          fi
