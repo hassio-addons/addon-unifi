@@ -16,8 +16,9 @@ RUN \
         mongodb-server=1:3.6.9+really3.6.8+90~g8e540c0b6d-0ubuntu5.3 \
         openjdk-17-jre-headless=17* \
     \
+    && unifi_latest_version=$(curl -s "https://dl.ui.com/unifi/debian/dists/stable/ubiquiti/binary-amd64/Packages" | grep "Version" | sed 's/Version: //')
     && curl -J -L -o /tmp/unifi.deb \
-        "https://dl.ui.com/unifi/8.5.6/unifi_sysvinit_all.deb" \
+        "https://dl.ui.com/unifi/debian/pool/ubiquiti/u/unifi/unifi_${unifi_latest_version}_all.deb" \
     \
     && dpkg --install /tmp/unifi.deb \
     && apt-get clean \
