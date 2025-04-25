@@ -11,7 +11,7 @@ RUN \
     && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends \
         binutils=2.34-6ubuntu1.11 \
-        libcap2=1:2.32-1ubuntu0.1 \
+        libcap2=1:2.32-1ubuntu0.2 \
         logrotate=3.14.0-4ubuntu3 \
         mongodb-server=1:3.6.9+really3.6.8+90~g8e540c0b6d-0ubuntu5.3 \
         openjdk-17-jre-headless=17* \
