@@ -13,6 +13,7 @@ init: false
 backup: cold
 map:
   - backup:rw
+host_network: true
 ports:
   161/udp: null
   1900/udp: null
